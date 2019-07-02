@@ -1,0 +1,11 @@
+framework module AcquireIO {
+  umbrella header "AcquireIO.h"
+
+  export *
+  module * { export * }
+}
+
+module AcquireIO.Swift {
+    header "AcquireIO-Swift.h"
+    requires objc
+}
