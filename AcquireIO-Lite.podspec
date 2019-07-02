@@ -8,7 +8,7 @@ s.homepage                  = 'https://github.com/acquireio/AcquireIO-Lite.git'
 s.license                   = { :type => 'Commercial', :text => 'Copyright (C) 2019 by Acquire' }
 s.author                    = {'Acquire' => 'raju@acquire.io'}
 s.social_media_url          = 'https://twitter.com/acquire_io'
-s.source                    = { :git => "https://github.com/acquireio/AcquireIO-Lite.git", :tag => "#{spec.version}" }
+s.source                    = { :git => "https://github.com/acquireio/AcquireIO-Lite.git", :tag => "#{s.version}" }
 s.platforms                 = {:ios => '8.2'}
 s.source_files              = 'acquireIO/AcquireIO.framework/headers/*.h'
 s.preserve_paths            = 'acquireIO/AcquireIO.framework', 'acquireIO/AcquireIO.framework/AcquireIOTheme/*.plist', 'acquireIO/AcquireIO.framework/README.md'
