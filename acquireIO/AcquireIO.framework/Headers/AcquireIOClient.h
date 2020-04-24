@@ -4,7 +4,7 @@
 //
 //  Created by Raju Jangid on 1/19/18.
 //  Copyright © 2018 AcquireIO Lab. All rights reserved.
-//  Version 1.0.11
+//  Version 2.0.14
 //
 
 
@@ -120,7 +120,10 @@ typedef NS_ENUM(NSInteger, AcquireIOInteractionEventType) {
     AcquireIOInteractionEventTypeCallUnmute,
     AcquireIOInteractionEventTypeCallVideoOn,
     AcquireIOInteractionEventTypeCallVideoOff,
-    AcquireIOInteractionEventTypeCallDisconnected
+    AcquireIOInteractionEventTypeCallDisconnected,
+    AcquireIOInteractionEventTypeConversationStart,
+    AcquireIOInteractionEventTypeConversationEnd,
+    AcquireIOInteractionEventTypeConversationFeedbackSubmit,
 };
 
 /**
@@ -307,6 +310,16 @@ typedef void (^AIOUploadCompletionBlock)(id _Nullable response, NSError * _Nulla
 @property(nonatomic, assign) BOOL removeAudioCallDisconnectButton;  //Default @NO
 
 /**
+ *  Forcefully remove audio call disconnect button to prevent visitor to disconnect with agent.
+ *
+ *  This is optional, if not set default @NO
+ *
+ *  Initialize dictionary key: removeCallViewResizeButton
+ * @avaialble available in SDK 2.0.12 or later
+ */
+@property(nonatomic, assign) BOOL removeCallViewResizeButton;  //Default @NO
+
+/**
  *  if yes then user want be able to chat with agents.
  *  if No, User can chat with agnets.
  *
@@ -316,6 +329,15 @@ typedef void (^AIOUploadCompletionBlock)(id _Nullable response, NSError * _Nulla
  *  @Available Available in SDK 2.0.10 version or later
  */
 @property(nonatomic, assign) BOOL isCoBrowseOnly;  //Default @NO
+
+/*
+ *
+ *  if yes then user want be able to upload any attachment in chat.
+ *  This is optional, is not set default is @NO
+ *  @Available available in SDK 2.0.12 version or later
+ */
+
+@property (nonatomic, assign) BOOL disableAttachment;
 
 @end
 
@@ -459,6 +481,16 @@ typedef void (^AIOUploadCompletionBlock)(id _Nullable response, NSError * _Nulla
 
 - (void) showSupport:(UIViewController * __nonnull)viewController withReference:(NSString *_Nonnull)reference;
 
+/**
+ show specific thread with reference, and send message
+
+ @param viewController from which viewcontroller you wanna show support view
+ @param reference meta field for each thread. should be uniqe by thread
+ @param message send a automated message.
+ @available Available in SDK version 2.0.12 or later
+ 
+ */
+- (void) showSupport:(UIViewController * __nonnull)viewController withReference:(NSString *_Nonnull)reference withMessage:(NSString *_Nonnull)message;
 /** Show support view controller from current viewcontroller.
  *
  * Pass nil argument will not work.
@@ -742,11 +774,21 @@ typedef void (^AIOUploadCompletionBlock)(id _Nullable response, NSError * _Nulla
 
 
 /**
+when user interacts with events
+
+@param type AcquireIOInteractionEventType
+@param data NSDictionary
+@available Available in SDK version 2.0.14 or later
+*/
+-(void) didUserInteractedWithEvent:(AcquireIOInteractionEventType) type withData:(NSDictionary *_Nullable)data;
+
+
+/**
  when user interacts with Callerview
 
  @param type AcquireIOInteractionEventType
  @available Available in SDK version 2.0.6 or later
  */
--(void) didUserInteractedWithEvent:(AcquireIOInteractionEventType) type;
+-(void) didUserInteractedWithEvent:(AcquireIOInteractionEventType) type  __deprecated_msg("Use didUserInteractedWithEvent: withData: method instead.");
 
 @end
