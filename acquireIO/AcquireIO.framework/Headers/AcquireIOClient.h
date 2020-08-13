@@ -4,7 +4,7 @@
 //
 //  Created by Raju Jangid on 1/19/18.
 //  Copyright © 2018 AcquireIO Lab. All rights reserved.
-//  Version 1.0.11
+//  Version 2.1.1
 //
 
 
@@ -120,7 +120,10 @@ typedef NS_ENUM(NSInteger, AcquireIOInteractionEventType) {
     AcquireIOInteractionEventTypeCallUnmute,
     AcquireIOInteractionEventTypeCallVideoOn,
     AcquireIOInteractionEventTypeCallVideoOff,
-    AcquireIOInteractionEventTypeCallDisconnected
+    AcquireIOInteractionEventTypeCallDisconnected,
+    AcquireIOInteractionEventTypeConversationStart,
+    AcquireIOInteractionEventTypeConversationEnd,
+    AcquireIOInteractionEventTypeConversationFeedbackSubmit,
 };
 
 /**
@@ -771,11 +774,21 @@ typedef void (^AIOUploadCompletionBlock)(id _Nullable response, NSError * _Nulla
 
 
 /**
+when user interacts with events
+
+@param type AcquireIOInteractionEventType
+@param data NSDictionary
+@available Available in SDK version 2.0.14 or later
+*/
+-(void) didUserInteractedWithEvent:(AcquireIOInteractionEventType) type withData:(NSDictionary *_Nullable)data;
+
+
+/**
  when user interacts with Callerview
 
  @param type AcquireIOInteractionEventType
  @available Available in SDK version 2.0.6 or later
  */
--(void) didUserInteractedWithEvent:(AcquireIOInteractionEventType) type;
+-(void) didUserInteractedWithEvent:(AcquireIOInteractionEventType) type  __deprecated_msg("Use didUserInteractedWithEvent: withData: method instead.");
 
 @end
