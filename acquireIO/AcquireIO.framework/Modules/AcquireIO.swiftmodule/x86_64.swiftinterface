@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
 // swift-module-flags: -target x86_64-apple-ios8.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -module-name AcquireIO
 @_exported import AcquireIO
 import CommonCrypto
@@ -357,8 +357,8 @@ extension SocketPacket {
   @objc final public func emit(_ event: Swift.String, with items: [Any])
   final public func emitWithAck(_ event: Swift.String, _ items: AcquireIO.SocketData...) -> AcquireIO.OnAckCallback
   @objc final public func emitWithAck(_ event: Swift.String, with items: [Any]) -> AcquireIO.OnAckCallback
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers final public class SocketRawAckView : ObjectiveC.NSObject {
   final public func with(_ items: AcquireIO.SocketData...)

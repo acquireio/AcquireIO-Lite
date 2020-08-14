@@ -1,8 +1,8 @@
-@version = "2.1.2"
+@version = "2.1.3"
 
 Pod::Spec.new do |s|
 s.name                      = 'AcquireIO-Lite'
-s.version                   = '2.1.2'
+s.version                   = '2.1.3'
 s.summary                   = 'Your complete customer communication platform - and not just live chat'
 s.homepage                  = 'https://github.com/acquireio/AcquireIO-Lite.git'
 s.license                   = { :type => 'Commercial', :text => 'Copyright (C) 2020 by Acquire' }
@@ -15,7 +15,7 @@ s.preserve_paths            = 'acquireIO/AcquireIO.framework', 'acquireIO/Acquir
 s.ios.vendored_frameworks   = 'acquireIO/AcquireIO.framework'
 s.framework                 = 'AcquireIO'
 s.frameworks                = 'AcquireIO','Foundation', 'UIKit', 'CoreGraphics'
-s.xcconfig                  = { 'LD_RUNPATH_SEARCH_PATHS' => '@loader_path/../Frameworks', 'ENABLE_BITCODE'=> 'NO',                             'EMBEDDED_CONTENT_CONTAINS_SWIFT' => 'YES'}
+s.xcconfig                  = { 'LD_RUNPATH_SEARCH_PATHS' => '@loader_path/../Frameworks', 'ENABLE_BITCODE'=> 'NO', 'EMBEDDED_CONTENT_CONTAINS_SWIFT' => 'YES'}
 s.requires_arc              = true
 s.documentation_url         = 'https://developers.acquire.io/ios-cobrowse-sdk'
 end
