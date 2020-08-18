@@ -4,7 +4,7 @@
 //
 //  Created by Raju Jangid on 1/19/18.
 //  Copyright © 2018 AcquireIO Lab. All rights reserved.
-//  Version 2.1.1
+//  Version 1.0.11
 //
 
 
@@ -429,6 +429,7 @@ typedef void (^AIOUploadCompletionBlock)(id _Nullable response, NSError * _Nulla
  */
 
 - (void) setVisitor:(NSString *_Nullable)name phone:(NSString *_Nullable)phone andEmail:(NSString *_Nullable)email;
+- (void) setVisitor:(NSString *_Nullable)name department:(NSString *_Nullable)department phone:(NSString *_Nullable)phone andEmail:(NSString *_Nullable)email;
 
 /** Set the extra detail of the app visitor.
  *
@@ -439,6 +440,7 @@ typedef void (^AIOUploadCompletionBlock)(id _Nullable response, NSError * _Nulla
  *
  *   @available Available in SDK version 1.0.11 or later
  */
+
 - (void) setVisitorExtraField:(NSArray *__nonnull)fields;
 
 

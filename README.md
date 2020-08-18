@@ -12,9 +12,11 @@
 
 ## Installation
 
-AcquireIO-Lite for iOS supports iOS 8, iOS 9, iOS 10 and iOS 11. 
+AcquireIO for iOS supports iOS 8, iOS 9, iOS 10, iOS 11, iOS 12 and iOS 13. 
 
-Building with Xcode 9 is required, which adds support for iPhone X and iOS 11.
+Building with Xcode 9+ is required, which adds support for iPhone X and iOS 11.
+
+Building with XCode 11.4+ and Swift 5.2.2 is required for Swift.
 
 ### CocoaPods
 
