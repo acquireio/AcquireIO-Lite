@@ -339,6 +339,18 @@ typedef void (^AIOUploadCompletionBlock)(id _Nullable response, NSError * _Nulla
 
 @property (nonatomic, assign) BOOL disableAttachment;
 
+/**
+*  if yes then user want be able to start new chat with agents.
+*  if No, User can start new chat with agnets.
+*
+*  This is optional, if not set default @NO
+*
+*  Initialize dictionary key: isHideNewChat
+*  @Available Available in SDK 2.1.6 version or later
+*/
+
+@property(nonatomic, assign) BOOL isHideNewChat; //Default @NO
+
 @end
 
 @protocol AcquireIODelegate;
@@ -429,7 +441,38 @@ typedef void (^AIOUploadCompletionBlock)(id _Nullable response, NSError * _Nulla
  */
 
 - (void) setVisitor:(NSString *_Nullable)name phone:(NSString *_Nullable)phone andEmail:(NSString *_Nullable)email;
+
+/** Set the name, department, phone and email of the app visitor.
+*
+* This is part of additional visitor configuration. If this is provided through the api, user will not be prompted to re-enter this information again.
+* Pass nil values for both name and email to clear out old existing values.
+*
+*   @param name The name of the user.
+    @param department The department of the user.
+*   @param phone The phone of the user.
+*   @param email The email address of the user.
+*
+*   @available Available in SDK version 2.1.5 or later
+*/
+
 - (void) setVisitor:(NSString *_Nullable)name department:(NSString *_Nullable)department phone:(NSString *_Nullable)phone andEmail:(NSString *_Nullable)email;
+
+
+/** Set the name, phone , email and fields of the app visitor.
+*
+* This is part of additional visitor configuration. If this is provided through the api, user will not be prompted to re-enter this information again.
+* Pass nil values for both name and email to clear out old existing values.
+*
+*   @param name The name of the user.
+*   @param phone The phone of the user.
+*   @param email The email address of the user.
+*   @param fields array of field. field dictionary format: {"n":"field_key","v":"field_value"}.
+ 
+*
+*   @available Available in SDK version 2.1.6 or later
+*/
+
+- (void) setVisitorDetail:(NSString *_Nullable)name phone:(NSString *_Nullable)phone email:(NSString *_Nullable)email extraFields:(NSArray *_Nullable)fields;
 
 /** Set the extra detail of the app visitor.
  *
@@ -452,6 +495,13 @@ typedef void (^AIOUploadCompletionBlock)(id _Nullable response, NSError * _Nulla
  *  @available Available in SDK version 1.0.8 or later
  */
 - (void)setVisitorHash:(NSString *_Nonnull)visitorHash;
+
+/**
+* Get visitor Id, after acquire session Connected
+*
+* @available Available in SDK version 2.1.6 or later
+*/
+- (NSInteger) getVisitorId;
 
 /**
  AcquireIO session connection status
