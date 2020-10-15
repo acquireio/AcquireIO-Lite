@@ -1,16 +1,16 @@
-@version = "2.1.6"
+@version = "2.1.7"
 
 
 Pod::Spec.new do |s|
 s.name                      = 'AcquireIO-Lite'
-s.version                   = '2.1.6'
+s.version                   = '2.1.7'
 s.summary                   = 'Your complete customer communication platform - and not just live chat'
 s.homepage                  = 'https://github.com/acquireio/AcquireIO-Lite.git'
 s.license                   = { :type => 'Commercial', :text => 'Copyright (C) 2020 by Acquire' }
 s.author                    = {'Acquire' => 'raju@acquire.io'}
 s.social_media_url          = 'https://twitter.com/acquire_io'
 s.source                    = { :git => "https://github.com/acquireio/AcquireIO-Lite.git", :tag => "#{s.version}" }
-s.platforms                 = {:ios => '8.2'}
+s.platforms                 = {:ios => '9.0'}
 s.source_files              = 'acquireIO/AcquireIO.framework/headers/*.h'
 s.preserve_paths            = 'acquireIO/AcquireIO.framework', 'acquireIO/AcquireIO.framework/AcquireIOTheme/*.plist', 'acquireIO/AcquireIO.framework/README.md'
 s.ios.vendored_frameworks   = 'acquireIO/AcquireIO.framework'

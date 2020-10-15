@@ -175,7 +175,7 @@ typedef void (^AIOUploadCompletionBlock)(id _Nullable response, NSError * _Nulla
  *
  *  if not set key in config ThemeOptions in your AcquireIOConfig then always load theme default setting
  *
- *  Initialize dictionary key: UseDefaultTheme
+ *    kialize dictionary key: UseDefaultTheme
  */
 
 @property(nonatomic, assign) BOOL useDefaultTheme; //Default @NO
