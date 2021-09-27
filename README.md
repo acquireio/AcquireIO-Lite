@@ -54,5 +54,5 @@ AcquireIO-Lite Cocoapods are distributed under [Apache License, Version 2.0](htt
 
 ## Help
 
-If you have any questions or comments, you can reach us at developers@acquire.io
+If you have any questions or comments, you can reach us at developer@acquire.io
 
