@@ -20,7 +20,7 @@ Building with XCode 11.4+ and Swift 5.2.2 is required for Swift.
 
 ### CocoaPods
 
-### [Add Private pod to your Podfile](https://guides.cocoapods.org/making/private-cocoapods.html#thats-it)
+### [Add Private pod to your Podfile](https://guides.cocoapods.org/making/private-cocoapods.html)
 
 Add the AcquireIO-Lite pod into your Podfile and run `pod install`.
 
@@ -45,21 +45,8 @@ Remember to write your description why you ask for this authorization, between  
 
 ```
 
-## Example app
-There is an example app provided [here](https://github.com/acquireio/acquireio-ios/tree/master/Examples) for both Objective-C and Swift.
-
 ## Setup and Configuration
-
-* Our [installation guide](https://developers.acquire.io/getting-start-ios) contains full setup and initialisation instructions.
-* Read ["Configuring AcquireIO-Lite for iOS"](https://developers.acquire.io/sdk-congifuration-example).
-* Read our guide on [Push Notifications](https://developers.acquire.io/ios-push-notifications).
-* Please contact us on [AcquireIO-Lite](https://acquire.io) with any questions you may have, we're only a message away!
-
-
-## What about events, push notifications, company and user data?
-
-AcquireIO-Lite for iOS has support for all these things. For full details please read our [documentation](https://developers.acquire.io/sdk-congifuration-example).
-
+* Our [installation guide](https://developer.acquire.io/sdk/ios) contains full setup and initialisation instructions.
 
 ## License
 
@@ -67,7 +54,5 @@ AcquireIO-Lite Cocoapods are distributed under [Apache License, Version 2.0](htt
 
 ## Help
 
-If you have any questions or comments, you can reach us at [raju at acquire dot io](https://github.com/rajuj6)
+If you have any questions or comments, you can reach us at developers@acquire.io
 
-## Maintainers
-  * [Raju Jangid](https://github.com/rajuj6)
